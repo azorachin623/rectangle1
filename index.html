@@ -1,0 +1,76 @@
+<html>
+	<head>
+		<title>矩形计算器</title>
+		<style>
+		.form-inline {  
+		  align-items: center;
+		  margin: 200px auto;
+		  width: 400px;
+		}
+		.form-inline label {
+		  margin: 10px 10px 10px 0;
+		}
+		.form-inline input {
+		  width: 200px;
+		  vertical-align: middle;
+		  margin: 10px 10px 10px 0;
+		  padding: 10px;
+		}
+		
+		</style>
+		</head>
+	<body>
+		<form class="form-inline">
+			<div>宽度：
+		    <input id="iptw" type="text"><span style="color:red">*</span>
+			</div>
+			<div>高度：
+			<input id="ipth" type="text"><span style="color:red">*</span>
+			</div>
+			<div>
+			<button type="button" class="button blue larrow" onclick="sl()">计 算<tton>
+			</div>
+			<div>周长：
+			<input id="ipr" type="text" >
+			</div>
+			<div>面积：
+			<input id="iptr" type="text">
+			</div>
+			<script>
+				document.getElementById('w').focus()
+				function sl() {
+				var w = document.getElementById("iptw").value;//获取宽度数值。
+			    var h = document.getElementById("ipth").value;//获取高度数值。
+				var ipr= document.getElementById("ipr")
+			    var iptr= document.getElementById("iptr")
+				console.log(w >= 0, 'oo')
+							  		
+					if (!w) {
+					alert('宽度不能为空')
+					} else {
+					if (w <= 0) {
+					return alert('宽度不能小于,等于零')
+					}
+					if (isNaN(+w)) alert('输入宽度不是合法的数值')
+					}
+					if (!h) {
+					alert('高度不能为空')
+					} else {
+					if (h <= 0) {
+					return alert('高度不能小于,等于零')
+					}
+					if (isNaN(+h)) alert('输入高度不是合法的数值')
+					}
+					if (w && h && !isNaN(+w) && !isNaN(+h)) {
+					ipr.value = (((+w) * 100 + (+h) * 100)*2)/100
+					iptr.value = ((+w) * 100 * (+h) * 100)/10000
+					} else {
+					ipr.value = ''
+					iptr.value = ''
+					}
+							  
+				     }
+				       </script>
+
+	</body>
+<ml>
